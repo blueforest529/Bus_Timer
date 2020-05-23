@@ -1,12 +1,12 @@
 import React from 'react'; 
-const WebtoonList = (props) => { 
+const BusList = (props) => { 
 
 return ( 
     <ul className="list_webtoon"> 
-        { props.list.map((webtoon, index) => ( 
+        { props.list.map((bus, index) => ( 
             <li key={index}> 
                 <strong className="title_webtoon"> 
-                {webtoon.time} 
+                {bus.time} 
                 </strong>
             </li>
             )) 
@@ -15,5 +15,4 @@ return (
  ) 
 } 
 
-export default WebtoonList;
-
+export default BusList;

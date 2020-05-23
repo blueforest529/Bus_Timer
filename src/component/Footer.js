@@ -1,7 +1,7 @@
 import React from 'react'; 
     const Footer = () => ( 
         <div className="footer"> 
-             Made by ÀÓÃ»±¸. 
+             Made by ìž„ì²­êµ¬. 
         </div> 
     ) 
 export default Footer;

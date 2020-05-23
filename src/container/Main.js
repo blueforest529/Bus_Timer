@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from "../component/Header"; 
 import Nav from "../component/Nav"; 
 import Footer from "../component/Footer";
-import WebtoonList from "../component/WebtoonList";
+import BusList from "../component/BusList";
 
 
 class Main extends Component{ 
@@ -27,6 +27,7 @@ class Main extends Component{
         
         let prevQuery = new URLSearchParams(prevProps.location.search);
         let prevbus_name = prevQuery.get('bus_name');
+
         let query = new URLSearchParams(this.props.location.search);
         let bus_name = query.get('bus_name');
 
@@ -34,6 +35,7 @@ class Main extends Component{
                 this.setState({
                     bus_name
             })
+            console.log(prevbus_name);
             console.log(bus_name);
         };
 
@@ -57,11 +59,11 @@ class Main extends Component{
         return ( 
             <div> 
                 <Header /> 
-                <Nav /> 
+                <Nav bus_name={this.state.bus_name} />
                 { this.state.busList.length > 0 ? ( 
-                    <WebtoonList list={ 
-                        this.state.busList.filter(webtoon => ( 
-                            webtoon.bus_name === this.state.bus_name
+                    <BusList list={ 
+                        this.state.busList.filter(bus => ( 
+                            bus.bus_name === this.state.bus_name
                         ))
                     } /> 
                 ) : ( 
