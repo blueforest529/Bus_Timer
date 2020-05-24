@@ -6,7 +6,7 @@ return (
         { props.list.map((bus, index) => ( 
             <li key={index}> 
                 <strong className="title_webtoon"> 
-                {bus.time} 
+                {bus.time_hour}:{bus.time_min} 
                 </strong>
             </li>
             )) 

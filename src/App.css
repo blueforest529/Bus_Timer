@@ -34,3 +34,7 @@ address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 .list_webtoon .img_webtoon {float:left;width:148px;height:106px;margin-right:10px}
 .list_webtoon .info_webtoon {overflow:hidden}
 .list_webtoon .info_webtoon .tit_webtoon {display:block;font-size:16px;padding:8px 0}
+
+.showtime{
+    background-color: red;
+}

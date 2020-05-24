@@ -3,7 +3,8 @@ import axios from 'axios';
 import Header from "../component/Header"; 
 import Nav from "../component/Nav"; 
 import Footer from "../component/Footer";
-import BusList from "../component/BusList";
+import Showtime from "./Showtime"
+// import Viewer from "./Viewer"
 
 
 class Main extends Component{ 
@@ -35,8 +36,6 @@ class Main extends Component{
                 this.setState({
                     bus_name
             })
-            console.log(prevbus_name);
-            console.log(bus_name);
         };
 
     }
@@ -54,22 +53,17 @@ class Main extends Component{
                 console.log(error); 
             }); 
     }
+
+    
         
     render(){ 
         return ( 
+            
             <div> 
                 <Header /> 
                 <Nav bus_name={this.state.bus_name} />
-                { this.state.busList.length > 0 ? ( 
-                    <BusList list={ 
-                        this.state.busList.filter(bus => ( 
-                            bus.bus_name === this.state.bus_name
-                        ))
-                    } /> 
-                ) : ( 
-                    <span> 로딩중임 ... </span> 
-                )}
-
+                <Showtime busList={this.state.busList}/>
+                {/* <Viewer  bus_name={this.state.bus_name} busList={this.state.busList} ></Viewer>          */}
                 <Footer /> 
             </div>
 
